@@ -1,1 +1,9 @@
+language: java
 
+cache:
+  directories:
+    - $HOME/.m2
+
+script:
+  - echo "RESBot at work... let's see if code compiles and tests pass!"
+  - mvn clean package
