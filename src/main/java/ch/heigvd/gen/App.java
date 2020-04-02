@@ -1,2 +1,4 @@
-public class Main {
+package ch.heigvd.gen;
+
+public class App {
 }

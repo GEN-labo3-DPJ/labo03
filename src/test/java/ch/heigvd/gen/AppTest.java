@@ -1,2 +1,4 @@
-public class MainTest {
+package ch.heigvd.gen;
+
+public class AppTest {
 }
