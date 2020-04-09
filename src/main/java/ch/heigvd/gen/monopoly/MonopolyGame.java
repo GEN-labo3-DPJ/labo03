@@ -12,6 +12,9 @@ package ch.heigvd.gen.monopoly;
 public class MonopolyGame {
     private int roundCnt;
     private Player players[];
+    private Board board;
+    private Die die1;
+    private Die die2;
 
     public void playGame(){
 

@@ -14,17 +14,24 @@ import java.util.LinkedList;
  */
 public class Board {
     // a Board knows all its Squares
-    private Square squares[];
+    private static int TOTAL_SQUARES = 40;
+    private Square squares[] = new Square[TOTAL_SQUARES];
 
     /**
      * @brief a Board will be responsible for knowing a new square location,
      * given an old square location, and some offset (the dice total)
-     * @param index location de l'ancienne case
+     * @param oldLocation location de l'ancienne case
      * @param dieTotal le resultat du lance de des
      * @return la nouvelle case
      */
-    public Square getNextSquare(int index, int dieTotal){
+    public Square getSquare(Square oldLocation, int dieTotal){
         assert dieTotal >= Die.LOWER_RANGE && dieTotal <= Die.UPPER_RANGE;
-        return squares[(index + dieTotal) % squares.length];
+        for(int i = 0; i < TOTAL_SQUARES; i++){
+            if(squares[i] == oldLocation) {
+                return squares[(i + dieTotal) % squares.length];
+            }
+        }
+
+        return null;
     }
 }

@@ -13,8 +13,8 @@ import java.util.Random;
  */
 public class Die {
     // calculating a random number total between 2 and 12 (the range of two dice)
-    public static final int LOWER_RANGE = 2;
-    public static final int UPPER_RANGE = 12;
+    public static final int LOWER_RANGE = 1;
+    public static final int UPPER_RANGE = 6;
     private static final Random RANDOM = new Random();
 
     // By LRG, we'll create a Die object with a faceValue attribute

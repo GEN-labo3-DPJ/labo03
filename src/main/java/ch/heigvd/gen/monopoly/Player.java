@@ -10,6 +10,10 @@ package ch.heigvd.gen.monopoly;
  * @brief le joueur
  */
 public class Player {
+    private Board board;
+    private Piece piece;
+    private Die die1;
+    private Die die2;
 
     /**
      * Taking a turn means:
@@ -17,4 +21,11 @@ public class Player {
      * 2. calculating the new square location
      * 3. moving the player's piece from an old location to a new square location
      */
+    public void takeTurn(){
+        die1.roll(); die2.roll();
+        int fvTotal = die1.getFaceValue() + die2.getFaceValue();
+        Square oldLocation = piece.getLocation();
+        Square newLocation = board.getSquare(oldLocation, fvTotal);
+        piece.setLocation(newLocation);
+    }
 }
