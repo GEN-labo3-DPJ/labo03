@@ -11,7 +11,8 @@ import java.util.Random;
 /**
  * @brief un de
  */
-public class Die {
+public class Dice
+{
     // calculating a random number total between 2 and 12 (the range of two dice)
     public static final int LOWER_RANGE = 1;
     public static final int UPPER_RANGE = 6;

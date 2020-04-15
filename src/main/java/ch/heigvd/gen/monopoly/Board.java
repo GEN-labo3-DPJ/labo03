@@ -6,8 +6,7 @@
  */
 package ch.heigvd.gen.monopoly;
 
-import java.util.Iterator;
-import java.util.LinkedList;
+import ch.heigvd.gen.monopoly.squares.Square;
 
 /**
  * @brief le plateau de jeu
@@ -21,14 +20,14 @@ public class Board {
      * @brief a Board will be responsible for knowing a new square location,
      * given an old square location, and some offset (the dice total)
      * @param oldLocation location de l'ancienne case
-     * @param dieTotal le resultat du lance de des
+     * @param diceTotal le resultat du lance de des
      * @return la nouvelle case
      */
-    public Square getSquare(Square oldLocation, int dieTotal){
-        assert dieTotal >= Die.LOWER_RANGE && dieTotal <= Die.UPPER_RANGE;
+    public Square getSquare(Square oldLocation, int diceTotal){
+        assert diceTotal >= Dice.LOWER_RANGE && diceTotal <= Dice.UPPER_RANGE;
         for(int i = 0; i < TOTAL_SQUARES; i++){
             if(squares[i] == oldLocation) {
-                return squares[(i + dieTotal) % squares.length];
+                return squares[(i + diceTotal) % squares.length];
             }
         }
 

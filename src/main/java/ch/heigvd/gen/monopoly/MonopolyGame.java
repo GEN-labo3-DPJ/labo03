@@ -13,8 +13,8 @@ public class MonopolyGame {
     private int roundCnt;
     private Player players[];
     private Board board;
-    private Die die1;
-    private Die die2;
+    private Dice dice1;
+    private Dice dice2;
 
     public void playGame(){
 
