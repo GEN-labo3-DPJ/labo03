@@ -6,8 +6,14 @@
  */
 package ch.heigvd.gen.monopoly.squares;
 
+import ch.heigvd.gen.monopoly.Player;
+
 /**
  * @brief la case d'un plateau de jeu
  */
-public abstract class Square {
+public abstract class Square
+{
+    private String name;
+
+    public abstract void landedOn(Player p);
 }

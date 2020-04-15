@@ -13,9 +13,14 @@ import ch.heigvd.gen.monopoly.squares.Square;
  */
 public class Player {
     private Board board;
-    private Piece piece;
-    private Dice dice1;
-    private Dice dice2;
+    private DiceCup diceCup;
+    private Square location;
+    private int cash;
+
+    public int getCash()
+    {
+        return cash;
+    }
 
     /**
      * Taking a turn means:
@@ -24,10 +29,20 @@ public class Player {
      * 3. moving the player's piece from an old location to a new square location
      */
     public void takeTurn(){
-        dice1.roll(); dice2.roll();
-        int fvTotal = dice1.getFaceValue() + dice2.getFaceValue();
-        Square oldLocation = piece.getLocation();
-        Square newLocation = board.getSquare(oldLocation, fvTotal);
-        piece.setLocation(newLocation);
+        diceCup.roll();
+        int fvTotal =diceCup.getTotal();
+        Square newLocation = board.getSquare(location, fvTotal);
+        setLocation(newLocation);
+        newLocation.landedOn(this);
+    }
+
+    public void setLocation(Square nL)
+    {
+        location=nL;
+    }
+
+    public void addCash(int amount)
+    {
+        cash+=amount;
     }
 }
