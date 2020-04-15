@@ -4,10 +4,10 @@
  * @authors: David Dupraz, Julien Brunisholz, Pablo Mercado
  * @date: 22.04.2020
  */
-package ch.heigvd.gen.monopoly;
+package ch.heigvd.gen.monopoly.squares;
 
 /**
  * @brief la case d'un plateau de jeu
  */
-public class Square {
+public abstract class Square {
 }
